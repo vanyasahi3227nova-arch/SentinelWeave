@@ -1,0 +1,169 @@
+{
+  "controls": [
+    {
+      "id": "CM-001",
+      "name": "Multi-Factor Authentication (MFA)",
+      "nist_csf": "PR.AC-7",
+      "cis_control": "CIS-06",
+      "description": "Require MFA for all user and privileged accounts, especially for remote access.",
+      "threat_categories": ["credential_compromise", "phishing", "account_takeover"],
+      "effort": "low",
+      "impact": "high",
+      "priority": 1
+    },
+    {
+      "id": "CM-002",
+      "name": "Endpoint Detection and Response (EDR)",
+      "nist_csf": "DE.CM-4",
+      "cis_control": "CIS-13",
+      "description": "Deploy EDR solution on all endpoints to detect and respond to malicious activity.",
+      "threat_categories": ["ransomware", "malware", "lateral_movement"],
+      "effort": "medium",
+      "impact": "high",
+      "priority": 2
+    },
+    {
+      "id": "CM-003",
+      "name": "Security Awareness Training",
+      "nist_csf": "PR.AT-1",
+      "cis_control": "CIS-14",
+      "description": "Regular security awareness training including phishing simulation exercises.",
+      "threat_categories": ["phishing", "social_engineering", "insider_threat"],
+      "effort": "low",
+      "impact": "medium",
+      "priority": 3
+    },
+    {
+      "id": "CM-004",
+      "name": "Data Backup and Recovery",
+      "nist_csf": "PR.IP-4",
+      "cis_control": "CIS-11",
+      "description": "Implement automated, encrypted, offsite backups with regular recovery testing.",
+      "threat_categories": ["ransomware", "data_destruction", "business_disruption"],
+      "effort": "medium",
+      "impact": "high",
+      "priority": 4
+    },
+    {
+      "id": "CM-005",
+      "name": "Privileged Access Management (PAM)",
+      "nist_csf": "PR.AC-4",
+      "cis_control": "CIS-05",
+      "description": "Implement PAM to control and monitor privileged account access.",
+      "threat_categories": ["insider_threat", "privilege_escalation", "lateral_movement"],
+      "effort": "high",
+      "impact": "high",
+      "priority": 5
+    },
+    {
+      "id": "CM-006",
+      "name": "Patch Management Program",
+      "nist_csf": "PR.IP-12",
+      "cis_control": "CIS-07",
+      "description": "Establish automated patch management for OS, applications, and firmware.",
+      "threat_categories": ["exploit", "vulnerability_exploitation"],
+      "effort": "medium",
+      "impact": "high",
+      "priority": 6
+    },
+    {
+      "id": "CM-007",
+      "name": "Network Segmentation",
+      "nist_csf": "PR.AC-5",
+      "cis_control": "CIS-12",
+      "description": "Segment networks to limit lateral movement and contain breaches.",
+      "threat_categories": ["lateral_movement", "ransomware", "data_breach"],
+      "effort": "high",
+      "impact": "high",
+      "priority": 7
+    },
+    {
+      "id": "CM-008",
+      "name": "Cloud Security Posture Management (CSPM)",
+      "nist_csf": "DE.CM-7",
+      "cis_control": "CIS-16",
+      "description": "Continuously monitor cloud environments for misconfigurations and compliance violations.",
+      "threat_categories": ["cloud_misconfiguration", "data_exposure", "cloud_breach"],
+      "effort": "medium",
+      "impact": "high",
+      "priority": 8
+    },
+    {
+      "id": "CM-009",
+      "name": "Security Information and Event Management (SIEM)",
+      "nist_csf": "DE.AE-3",
+      "cis_control": "CIS-08",
+      "description": "Deploy SIEM for centralized log collection, correlation, and alerting.",
+      "threat_categories": ["data_breach", "insider_threat", "advanced_persistent_threat"],
+      "effort": "high",
+      "impact": "high",
+      "priority": 9
+    },
+    {
+      "id": "CM-010",
+      "name": "Vulnerability Assessment Program",
+      "nist_csf": "ID.RA-1",
+      "cis_control": "CIS-07",
+      "description": "Regular vulnerability scanning and penetration testing of systems and applications.",
+      "threat_categories": ["vulnerability_exploitation", "web_application_attack"],
+      "effort": "medium",
+      "impact": "medium",
+      "priority": 10
+    },
+    {
+      "id": "CM-011",
+      "name": "Email Security Gateway",
+      "nist_csf": "PR.DS-6",
+      "cis_control": "CIS-09",
+      "description": "Deploy email security with anti-phishing, anti-malware, and DMARC/DKIM/SPF.",
+      "threat_categories": ["phishing", "malware", "business_email_compromise"],
+      "effort": "low",
+      "impact": "high",
+      "priority": 11
+    },
+    {
+      "id": "CM-012",
+      "name": "Zero Trust Architecture",
+      "nist_csf": "PR.AC-3",
+      "cis_control": "CIS-06",
+      "description": "Implement Zero Trust principles - never trust, always verify.",
+      "threat_categories": ["lateral_movement", "insider_threat", "remote_access_abuse"],
+      "effort": "very_high",
+      "impact": "very_high",
+      "priority": 12
+    },
+    {
+      "id": "CM-013",
+      "name": "Data Loss Prevention (DLP)",
+      "nist_csf": "PR.DS-5",
+      "cis_control": "CIS-13",
+      "description": "Implement DLP to prevent unauthorized data exfiltration.",
+      "threat_categories": ["data_exfiltration", "insider_threat", "data_breach"],
+      "effort": "high",
+      "impact": "high",
+      "priority": 13
+    },
+    {
+      "id": "CM-014",
+      "name": "Incident Response Plan",
+      "nist_csf": "RS.RP-1",
+      "cis_control": "CIS-17",
+      "description": "Documented, tested incident response plan with defined roles and procedures.",
+      "threat_categories": ["all"],
+      "effort": "medium",
+      "impact": "high",
+      "priority": 14
+    },
+    {
+      "id": "CM-015",
+      "name": "Third-Party Risk Management",
+      "nist_csf": "ID.SC-2",
+      "cis_control": "CIS-15",
+      "description": "Assess and monitor security posture of third-party vendors and supply chain.",
+      "threat_categories": ["supply_chain_attack", "third_party_breach"],
+      "effort": "medium",
+      "impact": "medium",
+      "priority": 15
+    }
+  ]
+}

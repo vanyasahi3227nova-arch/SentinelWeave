@@ -1,0 +1,97 @@
+{
+  "healthcare": {
+    "top_threats": [
+      "Ransomware",
+      "Insider Threat",
+      "Phishing / Business Email Compromise",
+      "Medical Device Compromise",
+      "Third-Party / Supply Chain Attack",
+      "Credential Stuffing",
+      "Data Breach (PHI Exposure)"
+    ],
+    "threat_actors": ["Financially Motivated Cybercriminals", "Nation-State Actors", "Malicious Insiders"],
+    "avg_breach_cost": 10930000,
+    "breach_probability_per_year": 0.28
+  },
+  "finance": {
+    "top_threats": [
+      "Financial Fraud",
+      "Ransomware",
+      "Account Takeover",
+      "API Abuse",
+      "Insider Trading / Fraud",
+      "DDoS Attacks",
+      "Supply Chain Compromise"
+    ],
+    "threat_actors": ["Organized Crime Groups", "Nation-State Actors", "Hacktivists"],
+    "avg_breach_cost": 5970000,
+    "breach_probability_per_year": 0.22
+  },
+  "retail": {
+    "top_threats": [
+      "Credit Card Skimming",
+      "E-commerce Fraud",
+      "Ransomware",
+      "Third-Party Compromise",
+      "Credential Stuffing",
+      "Supply Chain Attack",
+      "Magecart Attacks"
+    ],
+    "threat_actors": ["Financially Motivated Cybercriminals", "Organized Crime Groups"],
+    "avg_breach_cost": 3280000,
+    "breach_probability_per_year": 0.19
+  },
+  "technology": {
+    "top_threats": [
+      "Source Code Theft",
+      "Cloud Misconfiguration",
+      "Supply Chain Attack",
+      "Credential Compromise",
+      "Ransomware",
+      "API Abuse",
+      "Insider Threat"
+    ],
+    "threat_actors": ["Nation-State Actors", "Financially Motivated Cybercriminals", "Hacktivists"],
+    "avg_breach_cost": 4450000,
+    "breach_probability_per_year": 0.24
+  },
+  "education": {
+    "top_threats": [
+      "Ransomware",
+      "Phishing",
+      "Student Data Theft",
+      "Research IP Theft",
+      "DDoS Attacks",
+      "Credential Compromise"
+    ],
+    "threat_actors": ["Financially Motivated Cybercriminals", "Nation-State Actors (for research)"],
+    "avg_breach_cost": 3790000,
+    "breach_probability_per_year": 0.20
+  },
+  "manufacturing": {
+    "top_threats": [
+      "OT/ICS Compromise",
+      "Ransomware (Operational Disruption)",
+      "Intellectual Property Theft",
+      "Supply Chain Attack",
+      "Insider Threat",
+      "Spear Phishing"
+    ],
+    "threat_actors": ["Nation-State Actors", "Financially Motivated Cybercriminals"],
+    "avg_breach_cost": 4470000,
+    "breach_probability_per_year": 0.17
+  },
+  "general": {
+    "top_threats": [
+      "Phishing",
+      "Ransomware",
+      "Credential Compromise",
+      "Business Email Compromise",
+      "Data Breach",
+      "Insider Threat"
+    ],
+    "threat_actors": ["Financially Motivated Cybercriminals", "Opportunistic Attackers"],
+    "avg_breach_cost": 4350000,
+    "breach_probability_per_year": 0.15
+  }
+}

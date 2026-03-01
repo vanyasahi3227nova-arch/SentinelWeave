@@ -1,0 +1,138 @@
+{
+  "healthcare": {
+    "assets": [
+      "Electronic Health Records (EHR) System",
+      "Patient Portal",
+      "Medical Imaging System",
+      "Clinical Decision Support System",
+      "Healthcare Information System",
+      "Telemedicine Platform",
+      "Pharmacy Management System",
+      "Lab Information System",
+      "Patient Scheduling System",
+      "Billing and Claims System"
+    ],
+    "data_types": ["PHI", "PII", "Financial Records", "Medical Images"],
+    "regulations": ["HIPAA", "HITECH", "SOC2"],
+    "risk_multiplier": 1.8
+  },
+  "finance": {
+    "assets": [
+      "Core Banking System",
+      "Trading Platform",
+      "Customer Portal",
+      "Payment Processing System",
+      "Fraud Detection System",
+      "Loan Management System",
+      "ATM Network",
+      "Mobile Banking App",
+      "Risk Management Platform",
+      "Compliance Reporting System"
+    ],
+    "data_types": ["Financial Records", "PII", "Transaction Data", "Credit Card Data"],
+    "regulations": ["PCI-DSS", "SOX", "GDPR", "SOC2", "GLBA"],
+    "risk_multiplier": 2.0
+  },
+  "retail": {
+    "assets": [
+      "E-commerce Platform",
+      "Point of Sale System",
+      "Inventory Management System",
+      "Customer Loyalty System",
+      "Payment Gateway",
+      "Supply Chain Platform",
+      "CRM System",
+      "Warehouse Management System",
+      "Marketing Automation Platform",
+      "Analytics Dashboard"
+    ],
+    "data_types": ["Customer PII", "Credit Card Data", "Transaction Records"],
+    "regulations": ["PCI-DSS", "GDPR", "CCPA"],
+    "risk_multiplier": 1.4
+  },
+  "technology": {
+    "assets": [
+      "Source Code Repository",
+      "CI/CD Pipeline",
+      "Cloud Infrastructure",
+      "Developer Workstations",
+      "API Gateway",
+      "Customer Data Platform",
+      "Monitoring & Logging System",
+      "Identity Provider",
+      "Secret Management System",
+      "Container Orchestration Platform"
+    ],
+    "data_types": ["Source Code", "API Keys", "Customer Data", "System Logs"],
+    "regulations": ["SOC2", "GDPR", "ISO27001"],
+    "risk_multiplier": 1.5
+  },
+  "education": {
+    "assets": [
+      "Student Information System",
+      "Learning Management System",
+      "Research Data Repositories",
+      "Faculty Portals",
+      "Library Systems",
+      "Financial Aid System",
+      "Campus Networks",
+      "Email and Collaboration Platform",
+      "Video Conferencing Platform",
+      "Assessment Platform"
+    ],
+    "data_types": ["Student PII", "Academic Records", "Research Data", "Financial Records"],
+    "regulations": ["FERPA", "COPPA", "GDPR"],
+    "risk_multiplier": 1.2
+  },
+  "manufacturing": {
+    "assets": [
+      "Industrial Control Systems (ICS)",
+      "SCADA Systems",
+      "ERP System",
+      "Product Lifecycle Management",
+      "Quality Management System",
+      "Supply Chain Platform",
+      "IoT Sensor Network",
+      "Engineering Workstations",
+      "MES (Manufacturing Execution System)",
+      "Predictive Maintenance Platform"
+    ],
+    "data_types": ["Intellectual Property", "Operational Data", "Supply Chain Data"],
+    "regulations": ["ISO27001", "NIST CSF", "IEC 62443"],
+    "risk_multiplier": 1.6
+  },
+  "legal": {
+    "assets": [
+      "Case Management System",
+      "Document Management System",
+      "Client Portal",
+      "eDiscovery Platform",
+      "Legal Research Platform",
+      "Billing and Time Tracking System",
+      "Secure Communication Platform",
+      "Contract Management System",
+      "Compliance Tracking System",
+      "Email Archive"
+    ],
+    "data_types": ["Client PII", "Privileged Communications", "Legal Documents", "Financial Data"],
+    "regulations": ["GDPR", "CCPA", "SOC2", "ABA Guidelines"],
+    "risk_multiplier": 1.7
+  },
+  "general": {
+    "assets": [
+      "Email Server / Platform",
+      "File Storage / Collaboration",
+      "VPN / Remote Access",
+      "Identity and Access Management",
+      "Workstations / Endpoints",
+      "Web Application",
+      "Database Server",
+      "Backup System",
+      "Network Infrastructure",
+      "HR and Payroll System"
+    ],
+    "data_types": ["Employee PII", "Business Data", "Customer Data"],
+    "regulations": ["GDPR", "SOC2"],
+    "risk_multiplier": 1.0
+  }
+}

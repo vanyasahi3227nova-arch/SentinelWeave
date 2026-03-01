@@ -1,244 +1,390 @@
-# Cyber Risk Analysis Platform — Backend
+<div align="center">
 
-AI-powered Cyber Risk Analysis and Threat Modeling for SMEs using FAIR methodology, MITRE ATT&CK, and a multi-agent architecture.
+# 🛡️ SentinelWeave AI
 
----
+### AI‑Native Cyber Risk Analysis & Threat Modeling Platform for SMEs
 
-## Architecture
+<p align="center">
 
-```
-backend/
-├── main.py                          # FastAPI application entry point
-├── agents/
-│   ├── orchestrator.py              # Agent 10: Coordinates all agents
-│   ├── organization_profiler.py     # Agent 1: NL → structured org profile
-│   ├── asset_inference.py           # Agent 2: Predict asset inventory
-│   ├── threat_intelligence.py       # Agent 3: Hybrid RAG threat identification
-│   ├── threat_modeling_simulation.py # Agent 4: Kill chain simulation
-│   ├── fair_risk_calculation.py     # Agent 5: FAIR LEF × LM risk calculation
-│   ├── qualitative_risk_analysis.py # Agent 6: Risk narratives and ratings
-│   ├── control_recommendation.py   # Agent 7: NIST CSF / CIS Controls
-│   ├── risk_prioritization.py      # Agent 8: Priority scoring
-│   └── report_generation.py        # Agent 9: Executive risk report
-├── rag/
-│   └── hybrid_rag.py               # Vector store + structured retrieval
-├── datasets/
-│   ├── industry_asset_mapping.json
-│   ├── mitre_attack_dataset.json
-│   ├── industry_threat_dataset.json
-│   ├── fair_baseline_dataset.json
-│   └── control_mapping_dataset.json
-├── schemas/
-│   ├── request_schemas.py
-│   └── response_schemas.py
-├── utils/
-│   └── llm_utils.py                # Rule-based NLP extraction
-├── requirements.txt
-├── Procfile
-├── render.yaml
-├── railway.json
-├── Dockerfile
-└── runtime.txt
-```
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge\&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Production-green?style=for-the-badge\&logo=fastapi)
+![HuggingFace](https://img.shields.io/badge/LLM-HuggingFace-yellow?style=for-the-badge)
+![Multi-Agent](https://img.shields.io/badge/Architecture-Multi--Agent-purple?style=for-the-badge)
+![FAIR](https://img.shields.io/badge/Risk_Model-FAIR-red?style=for-the-badge)
+![MCP](https://img.shields.io/badge/Protocol-MCP-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge)
+
+</p>
+
+</div>
 
 ---
 
-## API Endpoints
+# 🌐 Overview
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/analyze` | Full risk analysis from org description |
-| GET | `/health` | System health check |
-| GET | `/agents/status` | Agent readiness status |
-| GET | `/docs` | OpenAPI Swagger UI |
-| GET | `/redoc` | ReDoc API documentation |
+**SentinelWeave AI** is a next‑generation **AI‑native cyber risk analysis and threat modeling platform** designed specifically for Small and Medium Enterprises (SMEs).
 
----
+Unlike traditional cyber risk tools that rely on static questionnaires, SentinelWeave AI uses:
 
-## Local Development
+* 🧠 Natural language understanding
+* 🤖 Multi‑agent reasoning
+* 🔗 Model Context Protocol (MCP)
+* 📊 FAIR quantitative risk modeling
+* 🎯 Hybrid Retrieval (Vector + PageIndex)
 
-### Prerequisites
-- Python 3.11+
-
-### Setup and Run
-
-```bash
-# Clone or download the backend folder
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the server
-uvicorn main:app --reload --port 8000
-```
-
-### Test the API
-
-```bash
-curl -X POST http://localhost:8000/analyze \
-  -H "Content-Type: application/json" \
-  -d '{
-    "organization_description": "We are a 40-employee healthcare SaaS company hosting patient records in AWS. Employees use laptops and access systems remotely. We use Stripe for payments and Google Workspace."
-  }'
-```
+To automatically infer organizational risk and simulate realistic cyber attacks.
 
 ---
 
-## Deployment on Render.com (Free Tier) — Recommended
+# 🎯 Core Innovation
 
-### Step 1: Push to GitHub
+SentinelWeave AI introduces a fundamentally new approach:
 
-```bash
-# Initialize git repository
-git init
-git add .
-git commit -m "Initial commit: Cyber Risk Analysis Platform"
+> Organizations simply describe themselves in plain English. The AI autonomously discovers assets, simulates threats, calculates risk, and generates executive‑level risk intelligence.
 
-# Create a new repository on github.com then push
-git remote add origin https://github.com/YOUR_USERNAME/cyber-risk-platform.git
-git branch -M main
-git push -u origin main
+Example input:
+
+```text
+We are a healthcare SaaS company with 40 employees using AWS, Google Workspace, and Stripe. Employees work remotely and access patient records.
 ```
 
-### Step 2: Deploy on Render
+Output:
 
-1. Go to **https://render.com** and sign up (free)
-2. Click **"New +"** → **"Web Service"**
-3. Connect your GitHub account and select the `cyber-risk-platform` repository
-4. Render will auto-detect the `render.yaml` — or configure manually:
-   - **Name:** `cyber-risk-platform`
-   - **Environment:** `Python`
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-   - **Plan:** Free
-5. Click **"Create Web Service"**
+✔ Full asset inventory (predicted)
+✔ Threat scenarios
+✔ Attack simulations
+✔ FAIR quantitative risk metrics
+✔ Qualitative risk narratives
+✔ Control recommendations
+✔ Prioritized risk roadmap
 
-### Step 3: Get Your Public URL
+---
 
-After deployment (2-5 minutes), Render provides:
+# 🧠 System Architecture
+
+<div align="center">
+
+```mermaid
+flowchart TB
+
+User[👤 SME User]
+Frontend[🎨 Base44 Frontend]
+API[⚡ FastAPI Backend]
+Orchestrator[🧭 Orchestrator Agent]
+
+Profiler[Agent 1: Org Profiler]
+AssetAgent[Agent 2: Asset Inference]
+ThreatIntel[Agent 3: Threat Intelligence]
+ThreatSim[Agent 4: Threat Simulation]
+FAIRAgent[Agent 5: FAIR Risk Calculation]
+QualAgent[Agent 6: Qualitative Analysis]
+ControlAgent[Agent 7: Control Recommendation]
+PriorityAgent[Agent 8: Risk Prioritization]
+ReportAgent[Agent 9: Report Generator]
+
+VectorDB[(Vector DB)]
+PageIndex[(PageIndex Retrieval)]
+Datasets[(Structured Datasets)]
+
+User --> Frontend
+Frontend --> API
+API --> Orchestrator
+
+Orchestrator --> Profiler
+Profiler --> AssetAgent
+AssetAgent --> ThreatIntel
+ThreatIntel --> ThreatSim
+ThreatSim --> FAIRAgent
+FAIRAgent --> QualAgent
+QualAgent --> ControlAgent
+ControlAgent --> PriorityAgent
+PriorityAgent --> ReportAgent
+
+ThreatIntel --> VectorDB
+ThreatIntel --> PageIndex
+ThreatIntel --> Datasets
+
+FAIRAgent --> Datasets
+ControlAgent --> Datasets
+
+ReportAgent --> API
+API --> Frontend
+Frontend --> User
 
 ```
-https://cyber-risk-platform.onrender.com
+
+</div>
+
+---
+
+# 🤖 Multi‑Agent Ecosystem
+
+SentinelWeave AI consists of **10 specialized AI agents**, each responsible for a specific cybersecurity function.
+
+| Agent                 | Function                                      | Intelligence Type    |
+| --------------------- | --------------------------------------------- | -------------------- |
+| Organization Profiler | Converts natural language to structured model | LLM                  |
+| Asset Inference       | Predicts infrastructure                       | Dataset + LLM        |
+| Threat Intelligence   | Finds relevant threats                        | Vector RAG           |
+| Threat Simulation     | Simulates real attacks                        | LLM reasoning        |
+| FAIR Risk Agent       | Calculates quantitative risk                  | Mathematical + LLM   |
+| Qualitative Agent     | Business risk narratives                      | LLM                  |
+| Control Agent         | Security recommendations                      | Structured retrieval |
+| Prioritization Agent  | Ranks risks                                   | Algorithmic          |
+| Report Agent          | Generates final output                        | Aggregation          |
+| Orchestrator Agent    | Coordinates ecosystem                         | MCP                  |
+
+---
+
+# 🔗 Model Context Protocol (MCP)
+
+SentinelWeave uses MCP‑style context sharing between agents.
+
+<div align="center">
+
+```mermaid
+sequenceDiagram
+
+participant Profiler
+participant AssetAgent
+participant ThreatAgent
+participant FAIRAgent
+participant ReportAgent
+
+Profiler->>AssetAgent: organization_profile.json
+AssetAgent->>ThreatAgent: asset_inventory.json
+ThreatAgent->>FAIRAgent: threat_scenarios.json
+FAIRAgent->>ReportAgent: fair_risk_analysis.json
+ReportAgent->>Profiler: context feedback loop
+
 ```
 
-Your public API endpoints:
-```
-GET  https://cyber-risk-platform.onrender.com/health
-GET  https://cyber-risk-platform.onrender.com/agents/status
-POST https://cyber-risk-platform.onrender.com/analyze
-GET  https://cyber-risk-platform.onrender.com/docs
+</div>
+
+Benefits:
+
+✔ Context continuity
+✔ Modular intelligence
+✔ Independent agent reasoning
+✔ Scalable architecture
+
+---
+
+# 🔎 Hybrid Retrieval Architecture
+
+SentinelWeave combines:
+
+### Vector‑Based Retrieval
+
+Used for:
+
+• Threat intelligence
+• MITRE ATT&CK matching
+• Threat actor profiling
+
+Powered by:
+
+• ChromaDB / FAISS
+• sentence‑transformers
+
+---
+
+### PageIndex Retrieval (Vectorless)
+
+Used for:
+
+• Asset prediction
+• FAIR baselines
+• Control mappings
+
+Advantages:
+
+✔ Faster
+✔ Deterministic
+✔ No hallucinations
+✔ Lower compute
+
+---
+
+<div align="center">
+
+```mermaid
+flowchart LR
+
+Query --> Hybrid
+Hybrid --> VectorSearch
+Hybrid --> PageIndex
+
+VectorSearch --> ThreatIntel
+PageIndex --> FAIRAgent
+PageIndex --> ControlAgent
+
 ```
 
-### Step 4: Test Live API
+</div>
 
-```bash
-curl -X POST https://cyber-risk-platform.onrender.com/analyze \
-  -H "Content-Type: application/json" \
-  -d '{
-    "organization_description": "Healthcare SaaS company using AWS and Okta with 50 employees"
-  }'
+---
+
+# 📊 FAIR Risk Modeling Pipeline
+
+<div align="center">
+
+```mermaid
+flowchart TB
+
+Assets --> ThreatFrequency
+ThreatFrequency --> Vulnerability
+Vulnerability --> LEF
+
+Assets --> LossMagnitude
+LossMagnitude --> FAIR
+
+LEF --> FAIR
+FAIR --> FinalRisk
+
+```
+
+</div>
+
+Risk formula:
+
+```text
+Risk = Loss Event Frequency × Loss Magnitude
 ```
 
 ---
 
-## Deployment on Railway.app (Alternative)
+# 🚀 API Endpoints
 
-### Step 1: Push to GitHub (same as above)
+### Analyze Organization
 
-### Step 2: Deploy on Railway
-
-1. Go to **https://railway.app** and sign up
-2. Click **"New Project"** → **"Deploy from GitHub repo"**
-3. Select your repository
-4. Railway detects the `railway.json` automatically
-5. Set environment variable: `PORT=8000` (Railway sets this automatically)
-6. Click **"Deploy"**
-
-### Public URL
-
-```
-https://cyber-risk-platform.up.railway.app
+```http
+POST /analyze
 ```
 
----
-
-## Base44 Frontend Integration
-
-Configure Base44 to use the following base URL:
-
-```
-Base URL: https://cyber-risk-platform.onrender.com
-
-Primary Endpoint:
-POST https://cyber-risk-platform.onrender.com/analyze
-
-Request Body:
-{
-  "organization_description": "string"
-}
-
-Response: Complete JSON risk analysis object
-```
-
----
-
-## Example Full Response Structure
+Input:
 
 ```json
 {
-  "organization_profile": {
-    "industry_sector": "healthcare",
-    "organization_size": {"employee_count": 40, "category": "small"},
-    "data_sensitivity_level": "critical",
-    "regulatory_exposure": ["HIPAA", "PCI-DSS", "SOC2"],
-    "cloud_providers": ["AWS"],
-    "workforce_distribution": "hybrid"
-  },
-  "asset_inventory": {
-    "assets": [...],
-    "summary": {"total_assets": 25, "critical": 6, "high": 8}
-  },
-  "threat_scenarios": {
-    "threat_scenarios": [...],
-    "mitre_techniques_identified": [...]
-  },
-  "attack_simulations": {
-    "attack_simulations": [...]
-  },
-  "fair_risk_analysis": {
-    "risk_calculations": [...],
-    "summary": {"aggregate_annual_loss_exposure_usd": 3450000}
-  },
-  "qualitative_risk": {
-    "overall_risk_posture": "HIGH RISK - Urgent Remediation Needed",
-    "qualitative_assessments": [...]
-  },
-  "recommended_controls": {
-    "immediate_controls": [...],
-    "short_term_controls": [...],
-    "long_term_controls": [...]
-  },
-  "prioritized_risks": {
-    "prioritized_risk_register": [...]
-  },
-  "risk_report": {
-    "executive_summary": {...},
-    "top_risks": [...],
-    "risk_roadmap": {...}
-  }
+  "organization_description": "Healthcare SaaS company using AWS"
+}
+```
+
+Output:
+
+```json
+{
+  "risk_report": {}
 }
 ```
 
 ---
 
-## Notes
+### Health Check
 
-- **No paid APIs required**: The system uses rule-based NLP extraction + dataset-driven analysis
-- **Optional LLM enhancement**: Uncomment `sentence-transformers` in `requirements.txt` for richer embeddings
-- **CORS**: Enabled for all origins — compatible with Base44 frontend
-- **Free tier**: Works within Render/Railway free tier limits
+```http
+GET /health
+```
+
+---
+
+### API Docs
+
+```http
+GET /docs
+```
+
+---
+
+# 🎨 Frontend Integration (Base44)
+
+Base44 connects directly to:
+
+```text
+https://your-api.onrender.com/analyze
+```
+
+Flow:
+
+```mermaid
+flowchart LR
+
+User --> Base44
+Base44 --> FastAPI
+FastAPI --> Agents
+Agents --> FastAPI
+FastAPI --> Base44
+Base44 --> User
+
+```
+
+---
+
+# 🗂 Project Structure
+
+```text
+backend/
+ ├── agents/
+ ├── datasets/
+ ├── rag/
+ ├── schemas/
+ ├── utils/
+ ├── main.py
+```
+
+---
+
+# ⚡ Deployment
+
+Deploy using Render:
+
+```bash
+git push origin main
+```
+
+Render automatically deploys.
+
+---
+
+# 🔥 Why SentinelWeave AI is Different
+
+| Traditional Tools     | SentinelWeave AI             |
+| --------------------- | ---------------------------- |
+| Static forms          | Natural language input       |
+| Manual asset entry    | AI asset discovery           |
+| No attack simulation  | Full attack chain simulation |
+| No FAIR risk modeling | Full quantitative FAIR       |
+| Single model          | Multi‑agent ecosystem        |
+| No MCP                | MCP‑based coordination       |
+| Limited retrieval     | Hybrid Vector + PageIndex    |
+
+---
+
+# 🧩 Technology Stack
+
+• FastAPI
+• HuggingFace LLMs
+• ChromaDB
+• FAISS
+• sentence‑transformers
+• Python
+• Render
+• Base44
+
+---
+
+# 👤 Author
+
+AI Cybersecurity Architect: Vanya Sahi
+
+SentinelWeave AI represents the future of autonomous cyber risk intelligence.
+
+---
+
+<div align="center">
+
+# 🛡️ SentinelWeave AI
+
+### Autonomous Cyber Risk Intelligence Platform
+
+</div>

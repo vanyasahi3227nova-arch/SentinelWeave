@@ -1,390 +1,335 @@
+
 <div align="center">
 
 # 🛡️ SentinelWeave AI
 
-### AI‑Native Cyber Risk Analysis & Threat Modeling Platform for SMEs
+### Cyber Risk Register & Visualization Platform for SMEs
 
 <p align="center">
-
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge\&logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-Production-green?style=for-the-badge\&logo=fastapi)
-![HuggingFace](https://img.shields.io/badge/LLM-HuggingFace-yellow?style=for-the-badge)
-![Multi-Agent](https://img.shields.io/badge/Architecture-Multi--Agent-purple?style=for-the-badge)
-![FAIR](https://img.shields.io/badge/Risk_Model-FAIR-red?style=for-the-badge)
-![MCP](https://img.shields.io/badge/Protocol-MCP-orange?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge)
-
+<img src="https://img.shields.io/badge/Platform-Cybersecurity-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Architecture-CRUD-green?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Backend-C%23%20%7C%20ASP.NET-purple?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Frontend-JavaScript-orange?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Database-SQL-red?style=for-the-badge" />
+<img src="https://img.shields.io/badge/API-NVD%20Integration-yellow?style=for-the-badge" />
 </p>
 
 </div>
 
 ---
 
-# 🌐 Overview
+## 🌐 Project Overview
 
-**SentinelWeave AI** is a next‑generation **AI‑native cyber risk analysis and threat modeling platform** designed specifically for Small and Medium Enterprises (SMEs).
+SentinelWeave AI is a cybersecurity risk management web application designed for small and medium-sized enterprises and microbusinesses that operate without dedicated security teams yet face increasing exposure to cyber threats.
 
-Unlike traditional cyber risk tools that rely on static questionnaires, SentinelWeave AI uses:
+The platform provides a structured and intuitive way to document, assess, and manage cyber risks through a centralized risk register. It combines automated risk scoring, tailored mitigation strategies, and visual dashboards to help organizations understand and prioritize their security posture.
 
-* 🧠 Natural language understanding
-* 🤖 Multi‑agent reasoning
-* 🔗 Model Context Protocol (MCP)
-* 📊 FAIR quantitative risk modeling
-* 🎯 Hybrid Retrieval (Vector + PageIndex)
-
-To automatically infer organizational risk and simulate realistic cyber attacks.
+Rather than overwhelming users with technical complexity, SentinelWeave translates cybersecurity into a practical, accessible workflow that supports real-world decision-making.
 
 ---
 
-# 🎯 Core Innovation
+## 🎯 Purpose
 
-SentinelWeave AI introduces a fundamentally new approach:
+The purpose of SentinelWeave AI is to bridge the gap between cybersecurity expertise and business usability.
 
-> Organizations simply describe themselves in plain English. The AI autonomously discovers assets, simulates threats, calculates risk, and generates executive‑level risk intelligence.
+The platform enables organizations to:
 
-Example input:
-
-```text
-We are a healthcare SaaS company with 40 employees using AWS, Google Workspace, and Stripe. Employees work remotely and access patient records.
-```
-
-Output:
-
-✔ Full asset inventory (predicted)
-✔ Threat scenarios
-✔ Attack simulations
-✔ FAIR quantitative risk metrics
-✔ Qualitative risk narratives
-✔ Control recommendations
-✔ Prioritized risk roadmap
+* Understand their cyber risks in a structured manner
+* Prioritize vulnerabilities based on severity
+* Take actionable mitigation steps
+* Visualize organizational risk exposure clearly
 
 ---
 
-# 🧠 System Architecture
+## 👥 Target Audience
 
-<div align="center">
-
-```mermaid
-flowchart TB
-
-User[👤 SME User]
-Frontend[🎨 Base44 Frontend]
-API[⚡ FastAPI Backend]
-Orchestrator[🧭 Orchestrator Agent]
-
-Profiler[Agent 1: Org Profiler]
-AssetAgent[Agent 2: Asset Inference]
-ThreatIntel[Agent 3: Threat Intelligence]
-ThreatSim[Agent 4: Threat Simulation]
-FAIRAgent[Agent 5: FAIR Risk Calculation]
-QualAgent[Agent 6: Qualitative Analysis]
-ControlAgent[Agent 7: Control Recommendation]
-PriorityAgent[Agent 8: Risk Prioritization]
-ReportAgent[Agent 9: Report Generator]
-
-VectorDB[(Vector DB)]
-PageIndex[(PageIndex Retrieval)]
-Datasets[(Structured Datasets)]
-
-User --> Frontend
-Frontend --> API
-API --> Orchestrator
-
-Orchestrator --> Profiler
-Profiler --> AssetAgent
-AssetAgent --> ThreatIntel
-ThreatIntel --> ThreatSim
-ThreatSim --> FAIRAgent
-FAIRAgent --> QualAgent
-QualAgent --> ControlAgent
-ControlAgent --> PriorityAgent
-PriorityAgent --> ReportAgent
-
-ThreatIntel --> VectorDB
-ThreatIntel --> PageIndex
-ThreatIntel --> Datasets
-
-FAIRAgent --> Datasets
-ControlAgent --> Datasets
-
-ReportAgent --> API
-API --> Frontend
-Frontend --> User
-
-```
-
-</div>
+* Small and Medium Enterprises (SMEs)
+* Startups and SaaS companies
+* Microbusinesses
+* Founders and operational teams
 
 ---
 
-# 🤖 Multi‑Agent Ecosystem
+## ⚙️ Core Features
 
-SentinelWeave AI consists of **10 specialized AI agents**, each responsible for a specific cybersecurity function.
+### 📝 Risk Register (CRUD System)
 
-| Agent                 | Function                                      | Intelligence Type    |
-| --------------------- | --------------------------------------------- | -------------------- |
-| Organization Profiler | Converts natural language to structured model | LLM                  |
-| Asset Inference       | Predicts infrastructure                       | Dataset + LLM        |
-| Threat Intelligence   | Finds relevant threats                        | Vector RAG           |
-| Threat Simulation     | Simulates real attacks                        | LLM reasoning        |
-| FAIR Risk Agent       | Calculates quantitative risk                  | Mathematical + LLM   |
-| Qualitative Agent     | Business risk narratives                      | LLM                  |
-| Control Agent         | Security recommendations                      | Structured retrieval |
-| Prioritization Agent  | Ranks risks                                   | Algorithmic          |
-| Report Agent          | Generates final output                        | Aggregation          |
-| Orchestrator Agent    | Coordinates ecosystem                         | MCP                  |
+Create, view, update, and delete structured cyber risk entries.
 
----
+### 📊 Automated Risk Scoring
 
-# 🔗 Model Context Protocol (MCP)
+Risk score is computed dynamically as Impact multiplied by Likelihood.
 
-SentinelWeave uses MCP‑style context sharing between agents.
+### 🧠 Mitigation Strategy Generation
 
-<div align="center">
+Tailored mitigation recommendations based on asset, category, and risk level.
 
-```mermaid
-sequenceDiagram
+### 🔥 Organizational Dashboard
 
-participant Profiler
-participant AssetAgent
-participant ThreatAgent
-participant FAIRAgent
-participant ReportAgent
+Color-coded heat map visualization for intuitive risk prioritization.
 
-Profiler->>AssetAgent: organization_profile.json
-AssetAgent->>ThreatAgent: asset_inventory.json
-ThreatAgent->>FAIRAgent: threat_scenarios.json
-FAIRAgent->>ReportAgent: fair_risk_analysis.json
-ReportAgent->>Profiler: context feedback loop
+### 🌐 Threat Intelligence Integration
 
-```
+Integration with external vulnerability data sources to provide real-world context.
 
-</div>
+### 🔐 Secure Authentication
 
-Benefits:
-
-✔ Context continuity
-✔ Modular intelligence
-✔ Independent agent reasoning
-✔ Scalable architecture
+User authentication with validation and secure handling of inputs.
 
 ---
 
-# 🔎 Hybrid Retrieval Architecture
+## 🧱 Technology Stack
 
-SentinelWeave combines:
+### Frontend
 
-### Vector‑Based Retrieval
+HTML5
+CSS3
+JavaScript
 
-Used for:
+### Backend
 
-• Threat intelligence
-• MITRE ATT&CK matching
-• Threat actor profiling
+C# using ASP.NET
+RESTful API architecture
 
-Powered by:
+### Database
 
-• ChromaDB / FAISS
-• sentence‑transformers
+SQL-based system (PostgreSQL or SQL Server recommended)
 
----
+### Web Service Integration
 
-### PageIndex Retrieval (Vectorless)
+Integration with the **National Vulnerability Database (NVD) API**
 
-Used for:
+Purpose of API:
 
-• Asset prediction
-• FAIR baselines
-• Control mappings
-
-Advantages:
-
-✔ Faster
-✔ Deterministic
-✔ No hallucinations
-✔ Lower compute
+* Retrieve known vulnerabilities (CVEs)
+* Provide severity scoring (CVSS)
+* Enhance user awareness of threats affecting their assets
 
 ---
 
-<div align="center">
+## 🏗️ System Architecture
 
 ```mermaid
 flowchart LR
 
-Query --> Hybrid
-Hybrid --> VectorSearch
-Hybrid --> PageIndex
+SME["🏢 User Organization (SME / Microbusiness)"] 
+UI["🎨 Frontend (HTML5, CSS3, JavaScript UI/UX)"] 
+Backend["⚙️ Backend (C# / ASP.NET)"] 
+Database["🗄️ Database (Risk Register Table)"] 
+API["🌐 NVD API (CVE & Vulnerability Intelligence)"]
 
-VectorSearch --> ThreatIntel
-PageIndex --> FAIRAgent
-PageIndex --> ControlAgent
+SME --> UI
+UI --> Backend
+Backend --> Database
+Backend --> API
 
+API --> Backend
+Database --> Backend
+Backend --> UI
+UI --> SME
 ```
-
-</div>
 
 ---
 
-# 📊 FAIR Risk Modeling Pipeline
+### 🔍 Component Interaction
 
-<div align="center">
+The user organization interacts with a clean frontend interface to manage risks.
+
+The frontend communicates with the backend, which:
+
+* Validates inputs
+* Calculates risk score
+* Determines risk level
+* Generates mitigation strategies
+
+The backend stores all information in the database and integrates with the NVD API to fetch relevant vulnerabilities associated with user-defined assets.
+
+---
+
+## 🔄 Application Workflow
 
 ```mermaid
-flowchart TB
+flowchart TD
 
-Assets --> ThreatFrequency
-ThreatFrequency --> Vulnerability
-Vulnerability --> LEF
+Input["User Inputs Risk Data"] 
+Validate["Backend Validation (C#)"] 
+Compute["Compute Score = Impact × Likelihood"] 
+Classify["Determine Risk Level"] 
+Mitigate["Generate Mitigation Strategy"] 
+Store["Store in Risk Register Database"] 
+API_Call["Fetch CVEs from NVD API"] 
+Display["Display Results in UI"]
 
-Assets --> LossMagnitude
-LossMagnitude --> FAIR
-
-LEF --> FAIR
-FAIR --> FinalRisk
-
-```
-
-</div>
-
-Risk formula:
-
-```text
-Risk = Loss Event Frequency × Loss Magnitude
+Input --> Validate
+Validate --> Compute
+Compute --> Classify
+Classify --> Mitigate
+Mitigate --> Store
+Store --> API_Call
+API_Call --> Display
+Display --> Input
 ```
 
 ---
 
-# 🚀 API Endpoints
+## 🧾 Risk Data Model
 
-### Analyze Organization
+Each risk entry includes:
 
-```http
-POST /analyze
-```
+* Risk Name
+* Description
+* Asset Name
+* Industry
+* Category (Confidentiality, Integrity, Availability)
+* Impact (1–10)
+* Likelihood (1–10)
+* Score (automatically calculated)
+* Risk Level (Low, Medium, High)
+* Mitigation Strategy
 
-Input:
+---
 
-```json
-{
-  "organization_description": "Healthcare SaaS company using AWS"
+## 🗄️ Database Schema (ERD)
+
+```mermaid
+erDiagram
+
+SME ||--o{ RISK_REGISTER : owns
+
+SME {
+  int org_id PK
+  string organization_name
+  string email
 }
-```
 
-Output:
-
-```json
-{
-  "risk_report": {}
+RISK_REGISTER {
+  int risk_id PK
+  int org_id FK
+  string risk_name
+  string description
+  string asset_name
+  string industry
+  string category
+  int impact
+  int likelihood
+  int score
+  string risk_level
+  string mitigation_strategy
+  datetime created_at
+  datetime updated_at
 }
 ```
 
 ---
 
-### Health Check
+## 🌍 API Integration (NVD)
 
-```http
-GET /health
-```
+The system integrates with the National Vulnerability Database API to provide real-world cybersecurity intelligence.
 
----
+When a user inputs an asset, the system retrieves:
 
-### API Docs
+* Known vulnerabilities (CVEs)
+* Severity scores (CVSS)
+* Vulnerability descriptions
 
-```http
-GET /docs
-```
+This allows organizations to understand how their assets are exposed to real-world threats and strengthens decision-making.
 
 ---
 
-# 🎨 Frontend Integration (Base44)
+## 🎨 UI / UX Design
 
-Base44 connects directly to:
+The application follows a clean and minimal design approach:
 
-```text
-https://your-api.onrender.com/analyze
-```
+* Light theme with subtle color usage
+* Clear navigation across modules
+* Real-time system feedback
+* Accessible and responsive layout
 
-Flow:
-
-```mermaid
-flowchart LR
-
-User --> Base44
-Base44 --> FastAPI
-FastAPI --> Agents
-Agents --> FastAPI
-FastAPI --> Base44
-Base44 --> User
-
-```
+Design is aligned with usability principles to ensure ease of use for non-technical users.
 
 ---
 
-# 🗂 Project Structure
+## 📊 Dashboard Capabilities
 
-```text
-backend/
- ├── agents/
- ├── datasets/
- ├── rag/
- ├── schemas/
- ├── utils/
- ├── main.py
-```
+* Risk heat map visualization
+* Distribution of risks by severity
+* Identification of high-risk assets
+* Display of relevant cybersecurity threats
 
 ---
 
-# ⚡ Deployment
+## 📅 Development Timeline
 
-Deploy using Render:
+Week 1
+Project setup and database schema design
 
-```bash
-git push origin main
-```
+Week 2
+Backend CRUD implementation
 
-Render automatically deploys.
+Week 3
+Frontend development
 
----
+Week 4
+Risk scoring and mitigation logic
 
-# 🔥 Why SentinelWeave AI is Different
+Week 5
+Dashboard and API integration
 
-| Traditional Tools     | SentinelWeave AI             |
-| --------------------- | ---------------------------- |
-| Static forms          | Natural language input       |
-| Manual asset entry    | AI asset discovery           |
-| No attack simulation  | Full attack chain simulation |
-| No FAIR risk modeling | Full quantitative FAIR       |
-| Single model          | Multi‑agent ecosystem        |
-| No MCP                | MCP‑based coordination       |
-| Limited retrieval     | Hybrid Vector + PageIndex    |
+Week 6
+Security implementation and testing
 
 ---
 
-# 🧩 Technology Stack
+## ⚠️ Challenges and Mitigation
 
-• FastAPI
-• HuggingFace LLMs
-• ChromaDB
-• FAISS
-• sentence‑transformers
-• Python
-• Render
-• Base44
+### Data Accuracy
+
+Users may provide inconsistent inputs
+Solution: Input validation and structured fields
+
+### API Reliability
+
+External APIs may have limitations
+Solution: Error handling and fallback mechanisms
+
+### Security Risks
+
+User inputs may introduce vulnerabilities
+Solution: Input sanitization and authentication
+
+### Usability
+
+Cybersecurity complexity for SMEs
+Solution: Simple interface and guided workflows
 
 ---
 
-# 👤 Author
+## 🚀 Future Enhancements
 
-AI Cybersecurity Architect: Vanya Sahi
+* AI-driven risk predictions
+* Advanced analytics dashboards
+* Compliance mapping (NIST, ISO)
+* Multi-organization support
 
-SentinelWeave AI represents the future of autonomous cyber risk intelligence.
+---
+
+## 👤 Author
+
+**Vanya Sahi**
+AI Cybersecurity Architect
+
+Focused on building systems at the intersection of:
+
+* Cyber risk analysis
+* Threat intelligence
+* Practical AI-driven security solutions
 
 ---
 
 <div align="center">
 
-# 🛡️ SentinelWeave AI
+### 🛡️ SentinelWeave AI
 
-### Autonomous Cyber Risk Intelligence Platform
+Making Cyber Risk Understandable, Actionable, and Visual
 
 </div>

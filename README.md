@@ -96,7 +96,7 @@ RESTful API architecture
 
 ### Database
 
-SQL-based system (MongoDB to store and record input user organizational asset risk information)
+SQL-based system (MongoDB to store and record input user organizational asset risk information). MongoDB is an appropriate choice because it supports easy CRUD operations, scalability, and has a flexible database schema. 
 ---
 
 ## 🗄️ Database Schema (Structured Risk Register Table)
@@ -426,10 +426,12 @@ Security implementation and testing
 
 ## ⚠️ Challenges and Mitigation
 
-### Data Accuracy
+### Data Accuracy & Incompatibility
 
 Users may provide inconsistent inputs and incorrect assessments of the risk impact and likelihood of the assets.
-Solution: Input validation and structured fields
+During the project, there can be certain programming or database storage packages which may be incompatible. 
+Solution: Input validation and structured fields.
+Backup packkages for the project in case of incompatibility.
 
 ### API Reliability
 

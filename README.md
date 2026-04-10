@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# 🛡️ SentinelWeave AI
+# 🛡️ SentinelWeave 
 
 ### Cyber Risk Register & Visualization Platform for SMEs
 
@@ -20,7 +20,7 @@
 
 ## 🌐 Project Overview
 
-SentinelWeave AI is a cybersecurity risk management web application designed for small and medium-sized enterprises and microbusinesses that operate without dedicated security teams yet face increasing exposure to cyber threats.
+SentinelWeave is a cybersecurity risk management web application designed for small and medium-sized enterprises and microbusinesses that operate without dedicated security teams yet face increasing exposure to cyber threats.
 
 The platform provides a structured and intuitive way to document, assess, and manage cyber risks through a centralized risk register. It combines automated risk scoring, tailored mitigation strategies, and visual dashboards to help organizations understand and prioritize their security posture.
 
@@ -30,7 +30,7 @@ Rather than overwhelming users with technical complexity, SentinelWeave translat
 
 ## 🎯 Purpose
 
-The purpose of SentinelWeave AI is to bridge the gap between cybersecurity expertise and business usability.
+The purpose of SentinelWeave is to bridge the gap between cybersecurity expertise and business usability.
 
 The platform enables organizations to:
 
@@ -54,46 +54,190 @@ The platform enables organizations to:
 
 ### 📝 Risk Register (CRUD System)
 
-Create, view, update, and delete structured cyber risk entries.
+Create, view, update, and delete structured cyber risk entries through input attributes such as the risk name, description of the risk, asset involved, industry the organization deals with, category compromised (Confidentiality/Integrity/Availability), impact (1-10), likelihood (1-10). The CRUD system refelects the appropriate risk level, score, and mitigation strategy.
 
 ### 📊 Automated Risk Scoring
 
-Risk score is computed dynamically as Impact multiplied by Likelihood.
+Risk score is computed dynamically as Impact multiplied by Likelihood. 
 
 ### 🧠 Mitigation Strategy Generation
 
-Tailored mitigation recommendations based on asset, category, and risk level.
+Tailored mitigation recommendations based on asset, category, risk level, and score. The mitigation stratgey also depends upon the vulnerabilities the assets inherently comprise. 
 
 ### 🔥 Organizational Dashboard
 
-Color-coded heat map visualization for intuitive risk prioritization.
+Color-coded heat map visualization for intuitive risk prioritization and display of the user organization's current risk posture. 
 
 ### 🌐 Threat Intelligence Integration
 
-Integration with external vulnerability data sources to provide real-world context.
+Integration with external vulnerability data sources to provide real-world context and latest cyber threats the assets are exposed towards. 
 
 ### 🔐 Secure Authentication
 
-User authentication with validation and secure handling of inputs.
+User authentication with validation and secure handling of inputs. The authentication occurs with organizational emails. 
 
 ---
 
 ## 🧱 Technology Stack
 
-### Frontend
+### Frontend (UI/UX Design)
 
 HTML5
 CSS3
 JavaScript
 
-### Backend
+### Backend (CRUD Application)
 
-C# using ASP.NET
+C# using ASP.NET with MCV infrastructure:
+1. Models: Data attributes involved to be fetched for analysis
+2. Controllers: Home Controller (Login, Authentication), API Controller (using integrated web services for vulnerability discovery)
+3. Views: Different layouts for each CRUD functionality as well as threat map visualization
 RESTful API architecture
 
 ### Database
 
-SQL-based system (PostgreSQL or SQL Server recommended)
+SQL-based system (MongoDB to store and record input user organizational asset risk information)
+---
+
+## 🗄️ Database Schema (Structured Risk Register Table)
+
+The database is designed around a centralized **Risk Register Table** that captures all relevant cybersecurity risk attributes for an organization.
+
+### 📊 Risk Register Table Structure
+
+| Field Name          | Data Type    | Description                                                   |
+| ------------------- | ------------ | ------------------------------------------------------------- |
+| risk_id             | INT (PK)     | Unique identifier for each risk entry                         |
+| org_id              | INT (FK)     | References the user organization                              |
+| risk_name           | VARCHAR(255) | Name of the identified risk                                   |
+| description         | TEXT         | Detailed explanation of the risk                              |
+| asset_name          | VARCHAR(255) | Asset associated with the risk                                |
+| industry            | VARCHAR(100) | Industry of the organization                                  |
+| category            | VARCHAR(50)  | CIA classification (Confidentiality, Integrity, Availability) |
+| impact              | INT          | Impact score (1–10 scale)                                     |
+| likelihood          | INT          | Likelihood score (1–10 scale)                                 |
+| score               | INT          | Computed value (impact × likelihood)                          |
+| risk_level          | VARCHAR(20)  | Derived classification (Low, Medium, High)                    |
+| mitigation_strategy | TEXT         | System-generated mitigation recommendation                    |
+| created_at          | DATETIME     | Timestamp of creation                                         |
+| updated_at          | DATETIME     | Timestamp of last update                                      |
+
+---
+
+### 🧠 Data Logic
+
+* **Score Calculation:**
+  Score = Impact × Likelihood
+
+* **Risk Level Classification:**
+
+  * Low: 1 – 20
+  * Medium: 21 – 50
+  * High: 51 – 100
+
+* **Mitigation Strategy:**
+  Generated dynamically based on:
+
+  * Asset type
+  * Risk category (CIA)
+  * Risk level
+
+---
+
+## 🎨 UI / UX Design Mockups
+
+The SentinelWeave AI interface has been designed with a strong focus on usability, clarity, and accessibility for non-technical users. The design follows a clean, light-themed aesthetic with structured layouts and minimal cognitive load.
+
+The interface is built around four primary views:
+
+### 🧭 Key Screens
+
+* **Login Page**
+  Simple and secure authentication interface with clear input fields and feedback
+
+* **Home Dashboard**
+  Introduces the platform with a guided workflow explaining how users can assess risks
+
+* **Risk Register (CRUD Interface)**
+  Core functionality allowing users to create, edit, view, and delete risk entries
+  Includes real-time computation of:
+
+  * Risk score
+  * Risk level
+  * Mitigation strategy
+
+* **Organizational Dashboard**
+  Visual representation of risks using a **color-coded heat map**
+  Displays:
+
+  * Risk distribution
+  * High-risk assets
+  * Relevant external threats
+
+* **Help & Profile Section**
+  Provides user details and support contact
+
+---
+
+### 🎯 Design Principles
+
+The design strictly follows usability best practices:
+
+* Minimalist interface with structured layouts
+* Clear system feedback (real-time updates)
+* Consistent navigation patterns
+* Error prevention and validation
+* Visual hierarchy for decision-making
+
+Color usage is intentional and restrained:
+
+* Green → Low Risk
+* Yellow → Medium Risk
+* Red → High Risk
+
+---
+
+### 🖼️ UI Mockup Preview
+
+#### Login Interface
+
+<img width="1256" height="783" alt="image" src="https://github.com/user-attachments/assets/5903aa30-729b-4506-a289-5ecfd84a88d4" />
+
+### Home Page
+<img width="1895" height="879" alt="image" src="https://github.com/user-attachments/assets/900775d0-a09b-448f-a22c-b1d07927a54a" />
+
+
+#### Risk Register Interface
+
+<img width="1896" height="893" alt="image" src="https://github.com/user-attachments/assets/f43b3628-bcaf-4ffb-b1a8-c4920cd8defd" />
+
+
+#### Organizational Dashboard (Heat Map)
+
+<img width="1909" height="884" alt="image" src="https://github.com/user-attachments/assets/edc29940-f990-4fa2-9438-ed4c9f81d2ed" />
+<br>
+<br>
+<img width="1867" height="892" alt="image" src="https://github.com/user-attachments/assets/1786ffcc-3289-4fea-8363-e11c4da32e4b" />
+
+### Web Services Integration (Vulnerabilities)
+<img width="1913" height="899" alt="image" src="https://github.com/user-attachments/assets/8e280036-9528-4de1-9e34-bead628f252c" />
+### Help Section
+<img width="1897" height="881" alt="image" src="https://github.com/user-attachments/assets/90659bc0-83e1-4b7b-8754-91301c36b091" />
+
+---
+
+### 🔗 Figma Design Link
+
+👉 **View Full Interactive Design Prototype:**
+https://option-azul-21364206.figma.site/
+
+---
+
+### 🧩 Design Note
+
+The UI is intentionally designed to feel like a real SaaS cybersecurity product rather than a conceptual prototype. Each interaction reflects actual backend functionality, ensuring consistency between design and implementation.
+
+---
 
 ### Web Service Integration
 
@@ -284,22 +428,22 @@ Security implementation and testing
 
 ### Data Accuracy
 
-Users may provide inconsistent inputs
+Users may provide inconsistent inputs and incorrect assessments of the risk impact and likelihood of the assets.
 Solution: Input validation and structured fields
 
 ### API Reliability
 
-External APIs may have limitations
+External APIs may have limitations or cannot provide the consistent vulnerabilities aligend with the risks idenitified. 
 Solution: Error handling and fallback mechanisms
 
 ### Security Risks
 
-User inputs may introduce vulnerabilities
-Solution: Input sanitization and authentication
+User inputs may introduce vulnerabilities. Furthermore, the project introduces the concern of storing proprietary organizational data of involved assets at the backend. Therefore, there needs to be utmost security of organizational data at backend.
+Solution: Input sanitization, authentication, and backend database encryption. 
 
 ### Usability
 
-Cybersecurity complexity for SMEs
+Cybersecurity complexity for SMEs and greater application learning curve for user organizations to understand application workflow.
 Solution: Simple interface and guided workflows
 
 ---
@@ -316,7 +460,7 @@ Solution: Simple interface and guided workflows
 ## 👤 Author
 
 **Vanya Sahi**
-AI Cybersecurity Architect
+Cybersecurity Architect
 
 Focused on building systems at the intersection of:
 
@@ -328,7 +472,7 @@ Focused on building systems at the intersection of:
 
 <div align="center">
 
-### 🛡️ SentinelWeave AI
+### 🛡️ SentinelWeave 
 
 Making Cyber Risk Understandable, Actionable, and Visual
 

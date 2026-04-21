@@ -476,7 +476,7 @@ Focused on building systems at the intersection of:
 
 <div align="center">
 
-### 🛡️ SentinelWeave 
+### 🛡️ CyberRiskLingo/ SentinelWeave
 
 Making Cyber Risk Understandable, Actionable, and Visual
 

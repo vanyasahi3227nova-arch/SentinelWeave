@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# 🛡️ SentinelWeave 
+# 🛡️ CyberRiskLingo
 
 ### Cyber Risk Register & Visualization Platform for SMEs
 
@@ -20,7 +20,7 @@
 
 ## 🌐 Project Overview
 
-SentinelWeave is a cybersecurity risk management web application designed for small and medium-sized enterprises and microbusinesses that operate without dedicated security teams yet face increasing exposure to cyber threats.
+CyberRisk Lingo is a cybersecurity risk management web application designed for small and medium-sized enterprises and microbusinesses that operate without dedicated security teams yet face increasing exposure to cyber threats.
 
 The platform provides a structured and intuitive way to document, assess, and manage cyber risks through a centralized risk register. It combines automated risk scoring, tailored mitigation strategies, and visual dashboards to help organizations understand and prioritize their security posture.
 
@@ -30,7 +30,7 @@ Rather than overwhelming users with technical complexity, SentinelWeave translat
 
 ## 🎯 Purpose
 
-The purpose of SentinelWeave is to bridge the gap between cybersecurity expertise and business usability.
+The purpose of CyberRisk Lingo is to bridge the gap between cybersecurity expertise and business usability.
 
 The platform enables organizations to:
 
@@ -102,6 +102,8 @@ SQL-based system (MongoDB to store and record input user organizational asset ri
 ## 🗄️ Database Schema (Structured Risk Register Table)
 
 The database is designed around a centralized **Risk Register Table** that captures all relevant cybersecurity risk attributes for an organization.
+<img width="1852" height="719" alt="image" src="https://github.com/user-attachments/assets/34dc874d-757c-4517-9827-641883c7cd84" />
+
 
 ### 📊 Risk Register Table Structure
 

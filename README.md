@@ -156,6 +156,9 @@ The interface is built around four primary views:
 
 * **Login Page**
   Simple and secure authentication interface with clear input fields and feedback
+  ### Acceptable Login Credentials:
+  <img width="910" height="435" alt="image" src="https://github.com/user-attachments/assets/a041f868-5268-4cb2-84ff-5b120a1134f3" />
+
 
 * **Home Dashboard**
   Introduces the platform with a guided workflow explaining how users can assess risks

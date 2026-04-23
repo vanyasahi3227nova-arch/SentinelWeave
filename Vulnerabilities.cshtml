@@ -1,0 +1,22 @@
+﻿@model CyberRiskAPI.Models.NvdResponse
+
+<h2>Vulnerabilities</h2>
+
+@if (Model?.vulnerabilities != null)
+{
+    foreach (var item in Model.vulnerabilities)
+    {
+        <div>
+            <h4>@item.cve.id</h4>
+            <p>@item.cve.descriptions?[0]?.value</p>
+            <strong>
+                CVSS: @item.cve.metrics?.cvssMetricV31?[0]?.cvssData?.baseScore
+            </strong>
+        </div>
+        <hr />
+    }
+}
+else
+{
+    <p>No data found.</p>
+}

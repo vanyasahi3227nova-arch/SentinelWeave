@@ -1,0 +1,68 @@
+﻿@model CyberRiskAPI.Models.CyberRisk
+
+@{
+    ViewData["Title"] = "Add Risk";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Cyber Risk</h2>
+
+<form asp-controller="CyberRisk" asp-action="Create" method="post" autocomplete="off">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label asp-for="RiskName" class="form-label"></label>
+        <input asp-for="RiskName" class="form-control" />
+        <span asp-validation-for="RiskName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AssetName" class="form-label"></label>
+        <input asp-for="AssetName" class="form-control" />
+        <span asp-validation-for="AssetName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Impact" class="form-label"></label>
+        <input asp-for="Impact" type="number" class="form-control" min="1" max="10" />
+        <span asp-validation-for="Impact" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Likelihood" class="form-label"></label>
+        <input asp-for="Likelihood" type="number" class="form-control" min="1" max="10" />
+        <span asp-validation-for="Likelihood" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Industry" class="form-label"></label>
+        <input asp-for="Industry" class="form-control" />
+        <span asp-validation-for="Industry" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label"></label>
+        <select asp-for="Category" class="form-select">
+            <option value="">--Select Category--</option>
+            <option>Confidentiality</option>
+            <option>Integrity</option>
+            <option>Availability</option>
+        </select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+
+    <a class="btn btn-secondary" asp-controller="CyberRisk" asp-action="Index">
+        Cancel
+    </a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

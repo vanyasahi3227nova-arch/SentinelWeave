@@ -1,0 +1,23 @@
+﻿@model CyberRiskAPI.Models.CyberRisk
+@{
+    ViewData["Title"] = "Delete Risk";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Cyber Risk</h2>
+
+<div class="alert alert-danger">
+    Are you sure you want to delete the risk "<strong>@Model.RiskName</strong>"?
+</div>
+
+<form asp-action="Delete" method="post">
+    
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+
+    <a class="btn btn-secondary"
+           asp-action="Index">
+        Cancel
+    </a>
+</form>

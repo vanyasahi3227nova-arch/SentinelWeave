@@ -1,0 +1,91 @@
+﻿@model WebsiteLogin.Models.UserModel
+
+@{
+    ViewBag.Title = "CyberRiskLingo Login";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+
+            <!-- LOGO -->
+            <div class="text-center mb-3">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.A0Z_hwZyVj-yDCPiC5QhrQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                     alt="CyberRiskLingo Logo"
+                     style="max-width: 180px;" />
+            </div>
+
+            <!-- TITLE -->
+            <h2 class="text-center mb-1">@ViewBag.PageTitle</h2>
+            <p class="text-center text-muted mb-4">
+                Secure Access Portal – CyberRiskLingo
+            </p>
+
+            <!-- ALERT -->
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-info text-center">
+                    @TempData["Message"]
+                </div>
+            }
+
+            <!-- LOGIN FORM -->
+            <form asp-action="ProcessLogin" method="post" id="LoginForm" novalidate>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <!-- EMAIL -->
+                <div class="mb-3">
+                    <label asp-for="Username" class="form-label">Corporate Email</label>
+                    <input asp-for="Username"
+                           class="form-control"
+                           id="usernameInput"
+                           placeholder="name@cyberrisklingo.com" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="mb-2">
+                    <label asp-for="Password" class="form-label">Password</label>
+
+                    <div class="input-group">
+                        <input asp-for="Password"
+                               class="form-control"
+                               type="password"
+                               id="passwordInput" />
+
+                        <button class="btn btn-outline-secondary"
+                                type="button"
+                                id="togglePwBtn">
+                            Show Password
+                        </button>
+                    </div>
+
+                    <span asp-validation-for="Password" class="text-danger"></span>
+
+                    <div class="form-text text-warning d-none" id="capsWarning">
+                        Warning: Caps Lock is ON
+                    </div>
+                </div>
+
+                <!-- LOGIN BUTTON -->
+                <button type="submit"
+                        class="btn btn-primary w-100 mt-4"
+                        id="LoginBtn">
+                    <span class="spinner-border spinner-border-sm me-2 d-none" id="spinner"></span>
+                    Secure Login
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- VALIDATION -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
